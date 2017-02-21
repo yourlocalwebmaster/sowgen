@@ -1,0 +1,11 @@
+<h1>Please Authenticate</h1>
+
+<div class="error" ng-bind="error"></div>
+<div class="form-group">
+    <label for="username">Username:</label><input value="grant.kimball@audacityhealth.com" type="text" name="username" placeholder="username" required class="form-control" id="username" />
+</div>
+<div class="form-group">
+    <label for="password">Password: </label> <input value="password" type="password" name="password" id="password" class="form-control" required>
+</div>
+
+<button type="submit" class="btn btn-primary" ng-click="login()">Login...</button>

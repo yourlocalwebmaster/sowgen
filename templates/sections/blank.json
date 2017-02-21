@@ -1,0 +1,7 @@
+{
+  "template":"Blank Section",
+  "type":"section",
+  "title" : "TITLE",
+  "content"  : "body",
+  "subsections" : []
+}

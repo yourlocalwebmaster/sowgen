@@ -1,0 +1,81 @@
+
+<div class="col-md-8" id="leftPane" ng-init="templateInit()">
+
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <h1>{{sowContainer.project.client.name}}</h1>
+            <h2>{{sowContainer.project.title}}</h2>
+            <h3>SOW Date: {{sowContainer.project.date}}</h3>
+        </div>
+    </div>
+
+
+    <ol class="nobull">
+        <li class="staticsection">
+            <div class="title">STATEMENT OF WORK</div>
+            <div class="content">This document is a statement of work designating services to be provided by Audacity Health LLC (“Audacity”) for {{sowContainer.project.client.name}} (“Client”).</div>
+        </li>
+    </ol>
+
+    <ol>
+        <li ng-repeat="(key, section) in sowContainer.sections" class="section" ng-click="setCurrentSection($event, key);" data-key="{{key}}">
+            <div ng-click="editSection($event,key);">
+                <div class="title" ng-bind="section.title"></div>
+                <div class="content" ng-bind-html="trust(section.content)"></div>
+            </div>
+
+            <ol class="">
+                <li ng-repeat="(subkey, subsection) in section.subsections" class="subsection" ng-click="setCurrentSubSection($event, key, subkey);" data-key="{{key}}" data-subkey="{{subkey}}">
+
+                    <div ng-click="editSection($event, key, subkey);">
+                        <div class="title" ng-bind="subsection.title"></div>
+                        <div class="content" ng-bind-html="trust(subsection.content)" ng-click=""></div>
+                    </div>
+
+                </li>
+            </ol>
+
+        </li>
+    </ol>
+</div>
+
+<div class="col-md-4" id="rightPane">
+    <div  class="container-fluid"  id="editPane" ng-class="{open: opened, closed: closed}" ng-init="opened=true;closed=false;">
+        <div class="editPaneControl">
+            <div class="fa fa-close" ng-click="opened=false;closed=true;resizePane(opened)"></div>
+            <div class="fa fa-bars" ng-click="opened=true;closed=false;resizePane(opened)"></div>
+        </div>
+       <div id="editPaneContainer">
+            <!--<div class="row">-->
+                <!--<div class="form-group col-md-4">-->
+                    <!--Client Name: <input ng-model="sowContainer.project.client.name" type="text" class="form-control" />-->
+                <!--</div>-->
+
+                <!--<div class="form-group col-md-4">-->
+                    <!--Job Title: <input ng-model="sowContainer.project.title" type="text" class="form-control" /><br/>-->
+                <!--</div>-->
+
+                <!--<div class="form-group col-md-4">-->
+                    <!--Date: <input ng-model="sowContainer.project.date" type="text" class="form-control" /><br/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <button ng-click="newSection()" class="btn btn-toolbar">Add Headline</button>
+                    &nbsp;
+                    <button ng-click="newSubSection()" class="btn btn-toolbar">Add Child Headline</button>
+                    &nbsp;
+                    <button ng-click="showTemplateLoader()" class="btn btn-toolbar">Load</button>
+                    &nbsp;
+                    <button ng-click="showSaveOptions()" class="btn btn-toolbar">PDF</button>
+                    &nbsp;
+                    <button ng-click="deleteSection()" class="btn btn-danger pull-right">Delete Section</button>
+                </div>
+            </div>
+            <div id="editContainer">
+                <div id="editTitleContainer" class="form-group"></div>
+                <div id="editBodyContainer" class="form-group"></div>
+            </div>
+        </div>
+    </div>
+</div>

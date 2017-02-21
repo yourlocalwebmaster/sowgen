@@ -1,0 +1,27 @@
+<div class=" col-md-offset-2  col-md-8 text-center" ng-init="projectInit()">
+    <h1>Next, give me some details about your project..</h1>
+
+    <div class="row">
+        <div class="form-group">
+            <input type="text" placeholder="Client Name" ng-model="project.client.name" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" placeholder="Project Name" ng-model="project.title" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" placeholder="Project Date" ng-model="project.date" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" placeholder="Project Revision" ng-model="project.revision" />
+        </div>
+    </div>
+
+    <p><a class="btn btn-success" ng-click="log(project)">console out project.</a></p>
+    <p><a ng-href="#/editor" class="btn btn-success">Ok Sparky, let's roll...</a></p>
+</div>

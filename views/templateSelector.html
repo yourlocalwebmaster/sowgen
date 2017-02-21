@@ -1,0 +1,20 @@
+<div class=" col-md-offset-2  col-md-8">
+    <h1>Welcome!</h1>
+    <h2>Please choose a template to start...</h2>
+    <!--
+    Note: Templates are manually added to /templates/templates.json
+    -->
+        <div class="row" ng-repeat="template in availableTemplates.templates">
+            <div class="col-md-12">
+                <a ng-href="#/project" ng-click="setTemplate(template)" class="btn btn-success">{{template.name}}</a> {{template.description}}</div>
+        </div>
+
+    <h1>Or...</h1>
+    <h2>Load an existing SOW...</h2>
+
+    <div ng-controller="SavedTemplateController">
+        <!-- TODO: These should be groupped by "Project".. Also, if "existing" They should not be allowed to alter the project name, but add a revision.. -->
+        <select ng-model="key" ng-options="key as val.client + ' - ' + val.project + ' - ' + val.revision for (key,val) in savedTemplates" ng-change="update()"></select>
+        <a ng-href="#/project" ng-click="openSavedTemplate(savedTemplates[key])" class="btn btn-success">Spawn Template Revision</a>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{
+  "templates": [
+    {
+      "name": "Main Template",
+      "file": "main_template.json",
+      "description": "Start with a pre-formatted SOW populated with the current standard Audacity SOW spec."
+    },
+    {
+      "name": "Blank Template",
+      "file": "blank_template.json",
+      "description": "Start fresh with a blank SOW template."
+
+    }
+  ],
+  "sections": [
+    {
+      "name":"Blank Section",
+      "file":"blank.json",
+      "description":"A blank section with title and content."
+    },
+    {
+      "name":"All Work Available",
+      "file": "allworkavailable.json",
+      "description": "A section with all available services."
+    },
+    {
+      "name":"Project Number + Name",
+      "file" : "projectnumberandname.json",
+      "description": "Displays the project number and name."
+    }
+  ],
+  "subsections": [
+    {
+      "name":"Blank Section",
+      "file":"blank.json",
+      "description":"A blank subsection with title and content."
+    }
+  ]
+}

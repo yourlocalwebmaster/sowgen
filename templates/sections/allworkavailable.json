@@ -1,0 +1,16 @@
+{
+  "template":"Included/Excluded Services",
+  "type":"section",
+  "title": "Included/Excluded Services",
+  "content":"Below is a list of services offered.",
+  "subsections":[
+    {
+      "title":"Custom Brand Development",
+      "content":"We will design your brand and call it a day."
+    },
+    {
+      "title":"Social Media Marketing",
+      "content":"We are looking forward to marketing your social media."
+    }
+  ]
+}

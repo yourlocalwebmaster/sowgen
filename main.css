@@ -1,0 +1,74 @@
+body,html{
+    height:100%;
+    font-size:16px;
+
+}
+.section,.subsection{
+    border: none;
+}
+.section:hover, .subsection:hover{
+    border: dashed #ccc 2px;
+}
+.section:hover,.subsection:hover{
+    cursor:pointer;
+}
+.current, .currentsub{
+    border: dashed #666 2px;
+    background: #f1f1f1;
+}
+.currentsub{
+    border-color: red;
+}
+li.section, .title{
+    font-size: 30px;
+    font-weight:100;
+}
+li.subsection{
+    font-size: 20px;
+    font-weight:100;
+}
+.subsection .content, .section .content, .content{
+    font-size:16px;
+}
+.nobull{
+list-style:none;
+}
+.editPaneControl{
+    font-size:20px;
+}
+.editPaneControl .fa:hover{
+    cursor: pointer;
+}
+#editPaneContainer{
+
+}
+.error{
+    color:red;
+}
+#editPane{
+    background-color: rgba(34,42,53,0.8);
+    position: absolute;
+    top:0px;
+    width:100%;
+    color:white;
+}
+#editPane.closed #editPaneContainer{
+    display:none;
+}
+#editPane.closed .fa-close{
+    display: none;
+}
+#editPane.open .fa-bars{
+    display: none;
+}
+.floattopright{
+    position:fixed;
+    top:0;
+    right:0;
+    width:50px;
+}
+#rightPane{
+    position:fixed;
+    top:50px;
+    right:10px;
+}
